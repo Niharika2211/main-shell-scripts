@@ -14,16 +14,16 @@ fi
 # validate functions takes input as exit status, what command they tried to install
  
  CHECK() {
-     if [ $! -eq 0 ] ; then 
+     if [ $1 -eq 0 ] ; then 
       echo "Installing $2...installation is SUCCESS"
      else
       echo "Not installing $2....installation is FAILURE"
      fi
  }
 
-dnf installed list mysql
+dnf list installed  mysql
 
-   if [$? -ne 0 ] ; then
+   if [ $? -ne 0 ] ; then
 
     echo "mysql is not insatlled... going to install" 
     dnf install mysql -y
@@ -33,4 +33,16 @@ dnf installed list mysql
     exit $?
    fi
 
+
+dnf installed list python3
+
+   if [ $? -ne 0 ] ; then
+
+    echo "mysql is not insatlled... going to install" 
+    dnf install python3 -y
+    CHECK $? "python3"
+   else 
+    echo "python3 is already install... nothing to do"
+    exit $?
+   fi
 
