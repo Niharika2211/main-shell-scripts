@@ -30,6 +30,7 @@ dnf list installed  mysql
     CHECK $? "Mysql"
    else 
     echo "mysql is already install... nothing to do"
+    echo "exit is $?"
    fi
 
 
@@ -42,5 +43,6 @@ dnf installed list python3
     CHECK $? "python3"
    else 
     echo "python3 is already install... nothing to do"
+    echo "exit is $?"
    fi
 
