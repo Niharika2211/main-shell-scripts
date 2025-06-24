@@ -14,7 +14,7 @@ fi
 # validate functions takes input as exit status, what command they tried to install
  
  CHECK() {
-     if [ $! -eq 0 ] ; then 
+     if [ $1 -eq 0 ] ; then 
       echo "Installing $2...installation is SUCCESS"
      else
       echo "Not installing $2....installation is FAILURE"
@@ -23,7 +23,7 @@ fi
 
 dnf list installed  mysql
 
-   if [$? -ne 0 ] ; then
+   if [ $? -ne 0 ] ; then
 
     echo "mysql is not insatlled... going to install" 
     dnf install mysql -y
