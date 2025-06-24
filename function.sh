@@ -21,7 +21,7 @@ fi
      fi
  }
 
-dnf installed list mysql
+dnf list installed  mysql
 
    if [$? -ne 0 ] ; then
 
