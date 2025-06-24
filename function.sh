@@ -21,7 +21,7 @@ fi
      fi
  }
 
-dnf list installed  mysql
+  dnf list installed  mysql
 
    if [ $? -ne 0 ] ; then
 
@@ -34,7 +34,7 @@ dnf list installed  mysql
    fi
 
 
-dnf installed list python3
+dnf list installed python3
 
    if [ $? -ne 0 ] ; then
 
